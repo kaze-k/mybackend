@@ -1,10 +1,10 @@
 let MYSQL_CONFIG = {}
 
 MYSQL_CONFIG = {
-  host: 'localhost',
-  user: 'root',
-  password: 'asd1375',
-  port: '3306',
+  host: 'xxx',
+  user: 'xxx',
+  password: 'xxx',
+  port: 'xxx',
   database: 'webdb'
 }
 
