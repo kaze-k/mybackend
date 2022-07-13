@@ -1,5 +1,5 @@
 // token
-const token = (lenth) => {
+const mkToken = (lenth) => {
   lenth = lenth || 54
   let t = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
   let tlen = t.length
@@ -8,4 +8,4 @@ const token = (lenth) => {
   return n
 }
 
-module.exports = token
+module.exports = mkToken
