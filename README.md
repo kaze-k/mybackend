@@ -4,7 +4,7 @@
 >
 > nodejs+mysql,实现简单的crud
 
-🔗 前端仓库：[mybackend](https://github.com/kaze-k/myfrontend)
+🔗 前端仓库：[myfrontend](https://github.com/kaze-k/myfrontend)
 
 📺 效果展示：[www.lsh28.cn:5000](http://www.lsh28.cn:5000)
 
@@ -100,7 +100,7 @@ let rootSQL = `insert ignore into login_user(id, username, passwd, isroot, islog
 > 失败会返回`code: -1`
 
 返回数据的示例
-```json
+``` jsonc
 // 登录成功返回的数据
 {
     code: 0,
