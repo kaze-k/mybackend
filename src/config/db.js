@@ -5,7 +5,7 @@ MYSQL_CONFIG = {
   user: 'xxx',
   password: 'xxx',
   port: 'xxx',
-  database: 'webdb'
+  database: 'xxx'
 }
 
 module.exports = MYSQL_CONFIG
