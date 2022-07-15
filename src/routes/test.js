@@ -5,7 +5,7 @@ const handleTestRoute = (req, res) => {
 
   // HACK:测试接口
   if (method === "GET" && req.path === '/api/test') {
-    const sql = `select * from login_user where username='test'`
+    const sql = `select * from login_user where username='root'`
     return execSQL(sql).then(reslut => {
       // HACK:测试
       const data = reslut[0].passwd
