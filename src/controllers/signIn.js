@@ -5,31 +5,22 @@ const userSignIn = (signInData) => {
   // console.log(signInData)
   if (signInData) {
     let sql = `select * from login_user where username='${signInData.username}'`
-    const data = execSQL(sql).then(resluts => {
-      // JSON.stringify将对象转成JSON字符串，可以用来判断给对象是否为空
-      if (JSON.stringify(resluts) !== '[]') {
-        const username = resluts[0].username
 
-        // 判断用户注册的用户名是否已在数据库中
-        if (username === signInData.username) {
-          return false
-        }
-      } 
-
-      else {
+    const res = async () => {
+      const res = await execSQL(sql)
+      // HACK:测试
+      // console.log("数据库:", res)
+      // 判断数据库中是否有该用户名
+      if (JSON.stringify(res) === "[]") {
         let sql = `insert into login_user(username, passwd) values ('${signInData.username}', '${signInData.passwd}')`
-        const data = execSQL(sql).then(resluts => {
-          // HACK:测试
-          // console.log("res:", reslut)
-          if (resluts) {
-            return true
-          }
-        })
-        return data
+        const data = await execSQL(sql)
+        // HACK:测试
+        // console.log("添加数据:", data)
+        if (data) return true
       }
-    })
+    }
 
-    return data
+    return res()
   }
 }
 

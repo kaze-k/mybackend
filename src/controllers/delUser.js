@@ -5,14 +5,9 @@ const delUser = (data) => {
     // 获取用户id
     const id = data
     let sql = `delete from login_user where id=${id}`
-    const newdata = execSQL(sql).then(results => {
-      if (results) {
-        return true
-      }
+    return execSQL(sql).then(results => {
+      if (results) return true
     })
-    return newdata
-  } else {
-    return false
   }
 }
 

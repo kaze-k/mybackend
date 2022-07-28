@@ -3,26 +3,22 @@ const writeToken = require('../utils/writetoken')
 
 const updatePermissions = (data) => {
   if (data) {
-    // 用户的id
-    const id = data.id
-    // 用户的权限
-    const permissions = data.state
-    if (permissions === true) {
+    // 用户的id，权限
+    const {id, state} = data
+    if (state === true) {
       let sql = `update login_user set isroot=true where id=${id} `
-      const data = execSQL(sql).then(results => {
+      return execSQL(sql).then(() => {
         writeToken(id, "[sudo]")
         return true
       })
-      return data
     } else {
       let sql = `update login_user set isroot=false where id=${id} `
-      const data = execSQL(sql).then(results => {
+      return execSQL(sql).then(() => {
         writeToken(id, "")
         return true
       })
-      return data
     }
   }
 }
 
-  module.exports = updatePermissions
+module.exports = updatePermissions

@@ -9,22 +9,18 @@ const delStudentData = (delData) => {
     const id = delData
 
     // 判断id是否存在
-    let sql =`select * from student where id=${id}`
-    const data = execSQL(sql).then(resluts => {
+    let sql = `select id from student where id=${id}`
+
+    const res = async () => {
+      const resluts = await execSQL(sql)
       if (JSON.stringify(resluts) !== '[]') {
         let sql = `delete from student where id=${id}`
-        // 执行删除
-        const data = execSQL(sql).then(resluts => {
-          if(resluts) {
-            return true
-          }
-        })
-        return data
-      } else {
-        return false
+        await execSQL(sql)
+        return true
       }
-    })
-    return data
+    }
+
+    return res()
   }
 }
 
