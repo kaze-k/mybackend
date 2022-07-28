@@ -1,4 +1,4 @@
-const { SuccessModel, ErrorModel } = require('../model/responseModel')
+const {SuccessModel, ErrorModel} = require('../model/responseModel')
 const postUsersData = require('../controllers/postUsersData')
 const getUsersData = require('../controllers/getUsersData')
 const updatePermissions = require('../controllers/updatePermissions')
@@ -36,7 +36,7 @@ const handlePermissionsRoute = (req, res) => {
 
   // 更新用户权限接口
   if (method === "POST" && req.path === '/api/users/permissions') {
-    const data =  req.body
+    const data = req.body
     const newPermissionsPromise = updatePermissions(data)
     return newPermissionsPromise.then(newPermissionsData => {
       if (newPermissionsData) {
@@ -81,7 +81,7 @@ const handlePermissionsRoute = (req, res) => {
       if (newData) {
         return new SuccessModel(newData, "更新成功")
       } else {
-        return new ErrorModel(newData, "未更新")
+        return new ErrorModel(newData, "用户名已被占用")
       }
     })
   }

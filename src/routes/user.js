@@ -1,4 +1,4 @@
-const { SuccessModel, ErrorModel } = require('../model/responseModel')
+const {SuccessModel, ErrorModel} = require('../model/responseModel')
 const changePasswd = require('../controllers/changePasswd')
 const changeUsername = require('../controllers/changeUsername')
 
