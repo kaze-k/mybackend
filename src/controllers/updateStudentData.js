@@ -20,11 +20,11 @@ const updateStudentData = (data) => {
           await execSQL(sql)
           return true
 
-        } else {
-          let sql = `update student set Sclass='${Sclass}', Sname='${Sname}', sex='${sex}', age=${age}, address='${address}', phone='${phone}' where id=${id}`
-          await execSQL(sql)
-          return true
         }
+      } else {
+        let sql = `update student set Sclass='${Sclass}', Sname='${Sname}', sex='${sex}', age=${age}, address='${address}', phone='${phone}' where id=${id}`
+        await execSQL(sql)
+        return true
       }
     }
 

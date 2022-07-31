@@ -22,7 +22,7 @@ const checkToken = (tokenData) => {
           return true
         }
       } else {
-        return false
+        return null
       }
     })
   }

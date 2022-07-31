@@ -1,5 +1,5 @@
 const execSQL = require('../db/mysql')
-const writeToken = require('../utils/writetoken')
+const writeToken = require('../utils/writeToken')
 
 const updatePermissions = (data) => {
   if (data) {

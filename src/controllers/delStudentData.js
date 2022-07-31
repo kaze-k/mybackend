@@ -6,7 +6,7 @@ const delStudentData = (delData) => {
   // console.log("del",delData)
   if (delData) {
     // 获取id
-    const id = delData
+    const { id } = delData
 
     // 判断id是否存在
     let sql = `select id from student where id=${id}`

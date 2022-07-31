@@ -1,5 +1,5 @@
 const execSQL = require('../db/mysql')
-const writeToken = require('../utils/writetoken')
+const writeToken = require('../utils/writeToken')
 
 // 登录相关的方法
 const userLogin = (loginData) => {
